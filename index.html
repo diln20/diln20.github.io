@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feliz 2026</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: grid;
+            place-items: center;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            color: #fff;
+            background: radial-gradient(900px 700px at 20% 25%, rgba(255, 255, 255, .14), transparent 60%), radial-gradient(900px 700px at 85% 30%, rgba(255, 170, 0, .22), transparent 60%), radial-gradient(1100px 900px at 50% 90%, rgba(255, 120, 0, .12), transparent 65%), radial-gradient(2px 2px at 12% 22%, rgba(255, 255, 255, .55), transparent 60%), radial-gradient(1.6px 1.6px at 28% 72%, rgba(255, 255, 255, .52), transparent 60%), radial-gradient(1.8px 1.8px at 55% 35%, rgba(255, 255, 255, .50), transparent 60%), radial-gradient(1.2px 1.2px at 70% 80%, rgba(255, 255, 255, .48), transparent 60%), radial-gradient(1.5px 1.5px at 88% 18%, rgba(255, 255, 255, .54), transparent 60%), linear-gradient(145deg, #c99a00, #b98500 45%, #9a5f00);
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient(900px 380px at 50% 10%, rgba(255, 255, 255, .10), transparent 65%);
+            opacity: .9;
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: .35;
+            background: radial-gradient(1.2px 1.2px at 12% 22%, rgba(255, 255, 255, .85), transparent 65%), radial-gradient(1px 1px at 28% 72%, rgba(255, 255, 255, .75), transparent 65%), radial-gradient(1.4px 1.4px at 55% 35%, rgba(255, 255, 255, .8), transparent 65%), radial-gradient(1px 1px at 70% 80%, rgba(255, 255, 255, .7), transparent 65%), radial-gradient(1.2px 1.2px at 88% 18%, rgba(255, 255, 255, .82), transparent 65%), radial-gradient(1px 1px at 42% 16%, rgba(255, 255, 255, .72), transparent 65%), radial-gradient(1.3px 1.3px at 63% 58%, rgba(255, 255, 255, .74), transparent 65%), radial-gradient(1.1px 1.1px at 18% 52%, rgba(255, 255, 255, .70), transparent 65%);
+            animation: twinkle 4.5s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: .25;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: .45;
+                transform: translateY(-2px);
+            }
+        }
+        
+        .box {
+            width: min(760px, 92vw);
+            padding: 24px 22px;
+            border-radius: 18px;
+            background: rgba(0, 0, 0, .48);
+            border: 1px solid rgba(255, 255, 255, .22);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            text-align: center;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, .35);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .box::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 20px;
+            background: conic-gradient( from 180deg, rgba(255, 255, 255, 0) 0deg, rgba(255, 255, 255, .18) 55deg, rgba(255, 170, 0, .22) 90deg, rgba(255, 255, 255, .14) 140deg, rgba(255, 255, 255, 0) 200deg, rgba(255, 120, 0, .18) 260deg, rgba(255, 255, 255, .12) 310deg, rgba(255, 255, 255, 0) 360deg);
+            filter: blur(10px);
+            opacity: .55;
+            animation: glowSpin 8s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes glowSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .box::after {
+            content: "";
+            position: absolute;
+            top: -40%;
+            left: -60%;
+            width: 140%;
+            height: 140%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, .08) 45%, rgba(255, 255, 255, .16) 50%, rgba(255, 255, 255, .08) 55%, transparent 100%);
+            transform: rotate(6deg);
+            opacity: .55;
+            animation: shine 6.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-12%) rotate(6deg);
+                opacity: .35;
+            }
+            50% {
+                transform: translateX(12%) rotate(6deg);
+                opacity: .65;
+            }
+            100% {
+                transform: translateX(-12%) rotate(6deg);
+                opacity: .35;
+            }
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: clamp(28px, 5vw, 52px);
+            letter-spacing: .2px;
+            text-shadow: 0 10px 22px rgba(0, 0, 0, .55);
+            position: relative;
+            z-index: 1;
+        }
+        
+        p {
+            margin: 12px auto 0;
+            max-width: 54ch;
+            font-size: clamp(14px, 2.2vw, 18px);
+            opacity: .98;
+            line-height: 1.62;
+            text-shadow: 0 8px 18px rgba(0, 0, 0, .55);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .panel {
+            transition: opacity .75s ease, transform .75s ease;
+            will-change: opacity, transform;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .is-hidden {
+            opacity: 0;
+            transform: translateY(14px);
+            pointer-events: none;
+        }
+        
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fire {
+            position: fixed;
+            top: 110%;
+            font-size: 30px;
+            animation: rise 1.9s linear infinite;
+            opacity: .95;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, .45));
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(.95) rotate(-6deg);
+                opacity: 0;
+            }
+            12% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-140vh) scale(1.25) rotate(8deg);
+                opacity: 0;
+            }
+        }
+        
+        .flor {
+            font-size: clamp(110px, 18vw, 170px);
+            margin-top: 6px;
+            animation: flotar 2.6s ease-in-out infinite;
+            filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .45));
+            user-select: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cake {
+            font-size: clamp(48px, 8vw, 64px);
+            margin-top: 6px;
+            animation: flotar 2.6s ease-in-out infinite;
+            filter: drop-shadow(0 10px 16px rgba(0, 0, 0, .45));
+            user-select: none;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @keyframes flotar {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+        
+        .tag {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .12);
+            border: 1px solid rgba(255, 255, 255, .22);
+            font-size: 13px;
+            opacity: .98;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <div id="msg1" class="panel is-visible">
+            <h1>🎆 ¡Feliz Año 2026! 🎆</h1>
+            <div class="flor">🌸</div>
+            <div class="cake">🍰</div>
+        </div>
+
+        <div id="msg2" class="panel is-hidden">
+            <h1>✨ Para Valentina ✨</h1>
+            <div class="tag">🌟 Que sea un gran 2026</div>
+
+            <p>
+                Que este 2026 te trate bonito,<br> con calma en el alma, con brillo bajito;<br> que la suerte te abrace sin hacer ruidito,<br> y te deje motivos para sonreír un poquito. ✨
+            </p>
+
+            <p>
+                Que se abran caminos y florezca tu día,<br> que lo bueno te encuentre con suave armonía;<br> que te sobren razones chiquitas de alegría,<br> y una buena compañía que sume poesía. 🌙
+            </p>
+
+            <p>
+                Y si el año se pone un poquito pesado,<br> que la paz te acompañe, cerquita a tu lado;<br> que tu fe te sostenga, firme y de cuidado,<br> y que todo lo duro se vuelva pasado. ✨
+            </p>
+
+            <p>
+                Y con Dios siempre en tu corazón,<br> que te cuide y te guíe en cada decisión;<br> que tu familia sea abrigo y razón,<br> y tus mascotas… pura bendición. ✨
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        const msg1 = document.getElementById("msg1");
+        const msg2 = document.getElementById("msg2");
+        const emojis = ["🎆", "🎇", "✨", "💫", "⭐", "🌟", "🎉", "🫶", "🤍"];
+
+        let introTimer = null;
+
+        function spawnFire() {
+            const s = document.createElement("div");
+            s.className = "fire";
+            s.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            s.style.left = Math.floor(Math.random() * 100) + "vw";
+            s.style.fontSize = (22 + Math.random() * 18) + "px";
+            s.style.animationDuration = (1.4 + Math.random() * 1.4) + "s";
+            document.body.appendChild(s);
+            setTimeout(() => s.remove(), 2600);
+        }
+
+        function burst(amount, everyMs) {
+            let i = 0;
+            const id = setInterval(() => {
+                spawnFire();
+                if (++i >= amount) clearInterval(id);
+            }, everyMs);
+        }
+
+        function fireworksFor(ms = 1400) {
+            const id = setInterval(spawnFire, 120);
+            setTimeout(() => clearInterval(id), ms);
+        }
+
+        function showMsg2() {
+            if (introTimer) clearTimeout(introTimer);
+
+            msg1.classList.remove("is-visible");
+            msg1.classList.add("is-hidden");
+
+            setTimeout(() => {
+                msg1.style.display = "none";
+                msg2.classList.remove("is-hidden");
+                msg2.classList.add("is-visible");
+                fireworksFor(1600);
+            }, 420);
+        }
+
+        function startIntro() {
+            msg1.style.display = "";
+            msg1.classList.remove("is-hidden");
+            msg1.classList.add("is-visible");
+
+            msg2.classList.remove("is-visible");
+            msg2.classList.add("is-hidden");
+
+            burst(22, 110);
+            introTimer = setTimeout(showMsg2, 2800);
+        }
+
+        // Inicio
+        startIntro();
+
+        // Teclas: Enter = mostrar mensaje, Esc = reiniciar
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" && msg1.classList.contains("is-visible")) showMsg2();
+            if (e.key === "Escape") startIntro();
+        });
+    </script>
+</body>
+
+</html>
